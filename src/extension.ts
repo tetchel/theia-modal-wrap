@@ -16,6 +16,11 @@ export function activate(context: vscode.ExtensionContext) {
 				`\nThis should also be on a new line. There is a single newline at the start of this line.`,
 				{ modal: true }
 			);
+		}),
+		vscode.commands.registerCommand('extension.helloWorldModalShort', () => {
+			vscode.window.showInformationMessage(`Here's a short message.`,
+				{ modal: true }
+			);
 		})
 	);
 }

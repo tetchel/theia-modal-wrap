@@ -1,6 +1,6 @@
 {
-	"name": "helloworld-sample",
-	"displayName": "helloworld-sample",
+	"name": "helloworld-modal",
+	"displayName": "helloworld-modal",
 	"description": "HelloWorld example for VS Code",
 	"version": "0.0.1",
 	"publisher": "tetchel",
@@ -12,7 +12,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorldModal"
+		"onCommand:extension.helloWorldModal",
+		"onCommand:extension.helloWorldModalShort"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -20,6 +21,10 @@
 			{
 				"command": "extension.helloWorldModal",
 				"title": "Hello World Modal"
+			},
+			{
+				"command": "extension.helloWorldModalShort",
+				"title": "Hello World Modal (short message)"
 			}
 		]
 	},
