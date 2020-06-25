@@ -9,11 +9,20 @@ export function activate(context: vscode.ExtensionContext) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "helloworld-sample" is now active!');
 
+	const longMsg = `Here's a long message with some newlines in it. This message is intended to stretch the modal dialog so I can test wrapping. So that's why this message is so long.` +
+		`\n\nThis should be on a new line. This is another long line but it should be on a new line because there are two newline characters at the start of this line. They should render in the browser.` +
+		`\nThis should also be on a new line. There is a single newline at the start of this line.`;
+
+	const superLongMsg = longMsg.repeat(10);
+
 	context.subscriptions.push(
 		vscode.commands.registerCommand('extension.helloWorldModal', () => {
-			vscode.window.showInformationMessage(`Here's a long message with some newlines in it. This message is intended to stretch the modal dialog so I can test wrapping. So that's why this message is so long.` +
-				`\n\nThis should be on a new line. This is another long line but it should be on a new line because there are two newline characters at the start of this line. They should render in the browser.` +
-				`\nThis should also be on a new line. There is a single newline at the start of this line.`,
+			vscode.window.showInformationMessage(longMsg,
+				{ modal: true }
+			);
+		}),
+		vscode.commands.registerCommand('extension.helloWorldModalLong', () => {
+			vscode.window.showInformationMessage(superLongMsg,
 				{ modal: true }
 			);
 		}),

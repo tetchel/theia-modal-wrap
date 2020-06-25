@@ -13,6 +13,7 @@
 	],
 	"activationEvents": [
 		"onCommand:extension.helloWorldModal",
+		"onCommand:extension.helloWorldModalLong",
 		"onCommand:extension.helloWorldModalShort"
 	],
 	"main": "./out/extension.js",
@@ -21,6 +22,10 @@
 			{
 				"command": "extension.helloWorldModal",
 				"title": "Hello World Modal"
+			},
+			{
+				"command": "extension.helloWorldModalLong",
+				"title": "Hello World Modal (super long message)"
 			},
 			{
 				"command": "extension.helloWorldModalShort",
